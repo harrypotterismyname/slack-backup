@@ -1,0 +1,8 @@
+Django==1.7.1
+dj-database-url==0.3.0
+dj-static==0.0.6
+django-toolbelt==0.0.1
+gunicorn==19.1.1
+psycopg2==2.5.4
+static3==0.5.1
+wsgiref==0.1.2
