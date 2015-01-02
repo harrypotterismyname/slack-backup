@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block main %}
+
+
+
+    <h4>Channels</h4>
+    <table class="table">
+        {% for channel in channels %}
+            <tr>
+                <td><a href="/channels/{{ channel.id }}/">
+                    {{ channel.name }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h4>Private Groups</h4>
+    <table class="table">
+        {% for channel in groups %}
+            <tr>
+                <td><a href="/channels/{{ channel.id }}/">
+                    {{ channel.name }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

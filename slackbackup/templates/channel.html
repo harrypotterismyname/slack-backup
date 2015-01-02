@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block main %}
+
+    <h2>
+        {{ channel.name }}</h2>
+
+    <table class="table table-striped">
+        {% for m in messages %}
+            <tr>
+                <td class="username">
+                    <img src="{{ m.get_user.slack_avatar }}" style="width: 24px; height: 24px;"/>
+                    {{ m.get_user.slack_username }}</td>
+                <td>:
+                    {{ m.get_text |safe }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    <script>
+        var prev = '';
+
+        $(".username").each(function () {
+            if ($(this).closest('tr').prev().find('.username').html() != '') {
+                prev = $(this).closest('tr').prev().find('.username').html();
+            }
+
+            if ($(this).html() == prev) {
+
+                $(this).html('');
+            }
+        });
+
+
+    </script>
+
+{% endblock %}

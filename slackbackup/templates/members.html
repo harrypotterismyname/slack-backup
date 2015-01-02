@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block main %}
+
+    <table class="table">
+        {% for m in members %}
+            <tr>
+            <td>
+            {{ m.username }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <a class="btn btn-success" href="/channels">View your channels</a>
+{% endblock %}
