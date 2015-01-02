@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'user_profile',
     'backupdata',
+    'endless_pagination'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -127,3 +128,9 @@ if DEBUG == False:
     DOMAIN = "http://slackbk.herokuapp.com"
     SLACK_CLIENT_ID = os.getenv('SLACK_CLIENT_ID', '')
     SLACK_CLIENT_SECRET =  os.getenv('SLACK_CLIENT_SECRET', '')
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
