@@ -4,7 +4,7 @@
 
 
     <h4>Channels</h4>
-    <table class="table">
+    <table class="table table-striped">
         {% for channel in channels %}
             <tr>
                 <td><a href="/channels/{{ channel.id }}/">
@@ -14,7 +14,7 @@
         {% endfor %}
     </table>
     <h4>Private Groups</h4>
-    <table class="table">
+    <table class="table table-striped">
         {% for channel in groups %}
             <tr>
                 <td><a href="/channels/{{ channel.id }}/">
