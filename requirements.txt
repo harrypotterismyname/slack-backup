@@ -8,3 +8,4 @@ static3==0.5.1
 wsgiref==0.1.2
 requests
 django-endless-pagination
+django-heroku-sendgridify

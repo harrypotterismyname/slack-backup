@@ -38,7 +38,7 @@ class Team(models.Model):
 class User(AbstractUser):
     slack_id = models.CharField(max_length=10, default='')
     slack_username = models.CharField(max_length=30, default='')
-    slack_avatar = models.CharField(max_length=150, default='')
+    slack_avatar = models.CharField(max_length=500, default='')
     slack_team_id = models.CharField(max_length=10, default='')
     slack_access_token = models.CharField(max_length=50, default='')
 
