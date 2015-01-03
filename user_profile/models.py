@@ -23,7 +23,7 @@ class Team(models.Model):
         members = json.loads(r.content)['members']
         for m in members:
             user, created = User.objects.get_or_create(slack_id=m['id'], email=m['profile']['email'],
-                                                       username=m['profile']['email'])
+                                                       username=m['profile']['email'][:30])
             user.slack_team_id = self.slack_id
             user.slack_username =  m['name']
             user.slack_avatar =  m['profile'].get('image_24','')
