@@ -17,6 +17,9 @@
                     {{ m.get_user.slack_username }}</td>
                 <td>:
                     {{ m.get_text |safe }}</td>
+            <td>
+                {{ m.ts }}
+            </td>
             </tr>
         {% endfor %}
 

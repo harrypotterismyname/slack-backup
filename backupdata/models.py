@@ -42,7 +42,12 @@ def parse_channel(user, json_channels, is_privategroup):
         channel.save()
         channels.append(channel)
 
-        if c.get('is_member', ''):
+        if is_privategroup:
+            members = c.get('members',[])
+            for m in members:
+                if m == user.slack_id:
+                    ChannelMember.objects.get_or_create(channel=channel, user=user)
+        elif c.get('is_member', ''):
             ChannelMember.objects.get_or_create(channel=channel, user=user)
 
     return channels
@@ -76,6 +81,9 @@ class Channel(models.Model):
 
     latest_crawled = models.DateTimeField(null=True)
     oldest_crawled = models.DateTimeField(null=True)
+
+    def __unicode__(self):
+        return self.name
 
     def get_creator(self):
         print "self.name: " + self.name
@@ -168,6 +176,15 @@ class Channel(models.Model):
 class ChannelMember(models.Model):
     channel = models.ForeignKey(Channel)
     user = models.ForeignKey(User)
+
+    def __unicode__(self):
+        name = ''
+        if self.channel and self.channel.name:
+            name += self.channel.name + " "
+        if self.user and self.user.slack_username:
+            name += self.user.slack_username
+
+        return name
 
 
 class Message(models.Model):

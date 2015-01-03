@@ -1,4 +1,4 @@
-from backupdata.models import crawl_all_channel, Channel, Message
+from backupdata.models import crawl_all_channel, Channel, Message, ChannelMember
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, render_to_response
@@ -25,6 +25,10 @@ def channels(request):
 @login_required
 def channel_detail(request, channel_id):
     channel = Channel.objects.get(id=channel_id)
+
+    channelmember = ChannelMember.objects.filter(channel = channel, user  = request.user)
+    if channelmember.count() == 0:
+        return  HttpResponseRedirect('/')
 
     #channel.crawl_history()
     messages = Message.objects.filter(channel=channel).order_by('-id')
