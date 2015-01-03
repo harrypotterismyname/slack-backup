@@ -27,7 +27,7 @@ def channel_detail(request, channel_id):
     channel = Channel.objects.get(id=channel_id)
 
     #channel.crawl_history()
-    messages = Message.objects.filter(channel=channel)
+    messages = Message.objects.filter(channel=channel).order_by('-id')
     variables = {'channel': channel, 'messages': messages}
     return render_to_response('channel.html', variables, context_instance=RequestContext(request))
 
