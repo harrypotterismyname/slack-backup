@@ -31,7 +31,7 @@ def channel_detail(request, channel_id):
         return  HttpResponseRedirect('/')
 
     #channel.crawl_history()
-    messages = Message.objects.filter(channel=channel).order_by('-id')
+    messages = Message.objects.filter(channel=channel).order_by('-ts')
     variables = {'channel': channel, 'messages': messages}
     return render_to_response('channel.html', variables, context_instance=RequestContext(request))
 

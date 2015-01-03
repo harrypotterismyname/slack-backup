@@ -2,6 +2,13 @@
 {% load endless %}
 {% block main %}
 
+    <style>
+    .dt{
+        float:right;
+        color: #ccc;
+    }
+    </style>
+
     <h2>
         {{ channel.name }}</h2>
 
@@ -16,9 +23,9 @@
                     <img src="{{ m.get_user.slack_avatar }}" style="width: 24px; height: 24px;"/>
                     {{ m.get_user.slack_username }}</td>
                 <td>:
-                    {{ m.get_text |safe }}</td>
-            <td>
-                {{ m.ts }}
+                    {{ m.get_text |safe }}
+
+                <span class="dt">{{ m.ts }}</span>
             </td>
             </tr>
         {% endfor %}
