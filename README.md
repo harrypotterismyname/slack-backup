@@ -51,7 +51,7 @@ Installation in Heroku
 
     heroku addons:add sendgrid:starter    
 
-    $heroku addons:add scheduler    
+    heroku addons:add scheduler    
 
 ### Set cron job for to automatically back-up your slack history
 
@@ -65,7 +65,7 @@ Add follow in command into your heroku schedule, set frequency to "Every 10 minu
 
     heroku open    
 
-### You can use a free hosted one here:
+### You can use a free hosted service here:
 
 [http://slackbk.herokuapp.com](http://slackbk.herokuapp.com)
 
