@@ -203,7 +203,7 @@ class Message(models.Model):
 
     def get_user(self):
         if self.user is None:
-            u = User.objects.get(slack_id=self.user_slack_id)
+            u = User.objects.filter(slack_id=self.user_slack_id)[0]
             self.user = u
             self.save()
 

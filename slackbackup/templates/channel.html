@@ -3,10 +3,65 @@
 {% block main %}
 
     <style>
-    .dt{
-        float:right;
-        color: #ccc;
-    }
+        .dt {
+            float: right;
+            color: #ccc;
+        }
+
+    /* Customized css for the pagination elements. */
+
+.pagination div,
+.endless_container {
+  display: inline-block;
+  *display: inline;
+  margin-bottom: 0;
+  margin-left: 0;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pagination div > a,
+.pagination span,
+.endless_container a {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+.pagination div > a:hover,
+.pagination .endless_page_current,
+ .endless_container a:hover {
+  background-color: #eeeeee;
+}
+
+.pagination div > a:first-child,
+.pagination div > span:first-child,
+.endless_container a {
+  border-left-width: 1px;
+  -webkit-border-radius: 3px 0 0 3px;
+     -moz-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
+}
+
+.endless_container {
+  width: 50%;
+}
+
+.endless_container a {
+  text-align: center;
+  width: inherit;
+  text-decoration: none;
+}
+
+
     </style>
 
     <h2>
@@ -25,14 +80,15 @@
                 <td>:
                     {{ m.get_text |safe }}
 
-                <span class="dt">{{ m.ts }}</span>
-            </td>
+                    <span class="dt">{{ m.ts }}</span>
+                </td>
             </tr>
         {% endfor %}
 
     </table>
-    <div class="pagination">
-        {% show_pages %}
+    <div class="pagination  pagination-centered">
+        <div>
+            {% show_pages %}</div>
     </div>
     <script>
         var prev = '';
