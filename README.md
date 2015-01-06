@@ -65,9 +65,6 @@ Add follow in command into your heroku schedule, set frequency to "Every 10 minu
 
     heroku open    
 
-### You can use a free hosted service here:
-
-[http://slackbk.herokuapp.com](http://slackbk.herokuapp.com)
 
 ### Questions & requests
 
