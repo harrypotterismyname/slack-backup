@@ -1,7 +1,7 @@
 slack-backup
 ============
 
-Slack is great, it would be better if you can easily back-up all Slack chat history into your secured host.   
+Slack is great, it would be better if you can easily back-up all Slack chat history into your secured host automatically and help browsing history easily .    
  
 ### Preinstall Requiments:
 
