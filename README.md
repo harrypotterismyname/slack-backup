@@ -11,6 +11,9 @@ Slack is great, it would be better if you can easily back-up all Slack chat hist
 
 If you want to test locally, you should install all modules in requirements.txt into your virtualenv. 
 
+### You can use a free hosted service here:
+
+[http://slackbk.herokuapp.com](http://slackbk.herokuapp.com)
 
 Installation in Heroku
 ----------------------
