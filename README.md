@@ -58,6 +58,10 @@ Installation in Heroku
 
 ### Set cron job for to automatically back-up your slack history
 
+Open the scheduler
+
+    heroku addons:open scheduler
+
 [https://scheduler.heroku.com/dashboard](https://scheduler.heroku.com/dashboard)
 
 Add follow in command into your heroku schedule, set frequency to "Every 10 minutes"
