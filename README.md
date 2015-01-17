@@ -41,7 +41,7 @@ Installation in Heroku
 
 ### Create database schema
 
-    heroku run python manage.py syncdb
+    heroku run python manage.py migrate
 
 ### Get your Slack client_id and client_secret  
 
