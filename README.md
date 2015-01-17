@@ -39,6 +39,10 @@ Installation in Heroku
 
     git push heroku master    
 
+### Create database schema
+
+    heroku run python manage.py syncdb
+
 ### Get your Slack client_id and client_secret  
 
 [https://api.slack.com/applications](https://api.slack.com/applications)
