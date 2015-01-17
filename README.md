@@ -77,7 +77,7 @@ Add follow in command into your heroku schedule, set frequency to "Every 10 minu
     heroku open    
 
 
-### Questions & requests
+### Don't know heroku & don't have time? I can help you to deploy.
 
     hong (at) vietnamdevelopers.com    
 
