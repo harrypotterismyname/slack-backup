@@ -1,3 +1,10 @@
+notice
+======
+Since I don't work on this any more for 2 years and it may not work, I don't have time to fix issues yet. 
+If anyone want to use a free version of Slack , just go here: https://workjoy.online 
+
+
+
 slack-backup
 ============
 
